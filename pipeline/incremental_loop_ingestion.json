@@ -8,6 +8,11 @@
 				"dependsOn": [],
 				"userProperties": [],
 				"typeProperties": {
+					"items": {
+						"value": "@pipeline().parameters.loop_input",
+						"type": "Expression"
+					},
+					"isSequential": true,
 					"activities": [
 						{
 							"name": "last_cdc_copy1",
@@ -254,7 +259,7 @@
 													{
 														"name": "cdc",
 														"value": {
-															"value": "@activity('max_cdc').output.resultSets[0].rows[0].cdc",
+															"value": "@activity('max_cdc_copy1').output.resultSets[0].rows[0].cdc",
 															"type": "Expression"
 														}
 													}
